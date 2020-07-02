@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/kradalby/Logger.swift.git",
         "state": {
           "branch": null,
-          "revision": "a0f30c08743f269ecca5fc20372193f2e19a7a11",
-          "version": "0.0.1"
+          "revision": "5ee3872802d4e4d44e0bd5406d78fe0e4bb999a6",
+          "version": "0.0.7"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/onevcat/Rainbow",
         "state": {
           "branch": null,
-          "revision": "f407235c7e473c3cb2d2907bb6822616d22a0b78",
-          "version": "3.0.3"
+          "revision": "9c52c1952e9b2305d4507cf473392ac2d7c9b155",
+          "version": "3.1.5"
         }
       }
     ]
