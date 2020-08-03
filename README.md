@@ -4,25 +4,21 @@ Tiny wrapper/functions for creating a configuration struct that can be read from
 
 The structure of this might not be a good idea, currently testing/learning swift.
 
-
 ## Idea
 
 The following config.json:
 
 ```json
 {
-    "name": "sample",
-    "people": [
-        "Kristoffer Andreas Dalby",
-    ],
-    "resolutions": [1200, 1000, 800, 300],
-    "jpegCompression": 0.2,
-    "inputPath": "sample",
-    "outputPath": "out",
-    "fileExtentions": ["jpg", "jpeg", "JPG", "JPEG"]
+  "name": "sample",
+  "people": ["Kristoffer Andreas Dalby"],
+  "resolutions": [1200, 1000, 800, 300],
+  "jpegCompression": 0.2,
+  "inputPath": "sample",
+  "outputPath": "out",
+  "fileExtentions": ["jpg", "jpeg", "JPG", "JPEG"]
 }
 ```
-
 
 Can be read into a struct in Swift:
 
@@ -41,4 +37,3 @@ public struct GalleryConfiguration: Configuration {
 
 let config = Config.readConfig(configFormat: GalleryConfiguration.self, atPath: "config.json")
 ```
-
