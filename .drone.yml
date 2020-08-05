@@ -21,7 +21,8 @@
             "cd /tmp/swift-format",
             "swift build --configuration release",
             "cd -",
-            "/tmp/swift-format/.build/release/swift-format -m lint"
+            "/tmp/swift-format/.build/release/swift-format format --recursive  Sources/ Package.swift",
+            "/tmp/swift-format/.build/release/swift-format lint --recursive  Sources/ Package.swift"
          ],
          "image": "swift:latest",
          "name": "Swift lint",
@@ -29,7 +30,6 @@
       },
       {
          "commands": [
-            "make test",
             "make build"
          ],
          "image": "swift:latest",
