@@ -4,11 +4,13 @@ import Logger
 let log = Logger()
 
 public protocol Configuration: Decodable {
+  mutating func initHook()
 
 }
 
 public func readConfig<T: Configuration>(configFormat: T.Type, atPath: String) -> T {
-  if let config = readAndDecodeJsonFile(configFormat, atPath: atPath) {
+  if var config = readAndDecodeJsonFile(configFormat, atPath: atPath) {
+    config.initHook()
     return config
   }
   log.error("Could not read configuration file")
