@@ -20,14 +20,10 @@
       {
         "commands":
           [
-            "git clone -b swift-5.3-branch https://github.com/apple/swift-format.git /tmp/swift-format",
-            "cd /tmp/swift-format",
-            "swift build --configuration release",
-            "cd -",
-            "/tmp/swift-format/.build/release/swift-format format --recursive  Sources/ Package.swift",
-            "/tmp/swift-format/.build/release/swift-format lint --recursive  Sources/ Package.swift",
+            "swift-format format --recursive  Sources/ Package.swift",
+            "swift-format lint --recursive  Sources/ Package.swift",
           ],
-        "image": "swift:latest",
+        "image": "kradalby/swift-format:5.4",
         "name": "Swift lint",
         "pull": "always",
       },
@@ -47,7 +43,12 @@
             "webhook_id": { "from_secret": "discord_webhook_id" },
             "webhook_token": { "from_secret": "discord_webhook_token" },
           },
-        "when": { "status": ["success", "failure"] },
+        "when":
+          {
+            "branch": ["master"],
+            "event": ["push"],
+            "status": ["success", "failure"],
+          },
       },
     ],
   "type": "kubernetes",
