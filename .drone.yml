@@ -45,7 +45,7 @@
           },
         "when":
           {
-            "branch": ["master"],
+            "branch": ["master", "main"],
             "event": ["push"],
             "status": ["success", "failure"],
           },
